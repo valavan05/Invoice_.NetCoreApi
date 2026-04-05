@@ -3,11 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using InvoiceCoreAPI.Contracts;
 using InvoiceCoreAPI.DTO;
 using InvoiceCoreAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace InvoiceCoreAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ItemMasterController : ControllerBase
     {
         private readonly IItemMasterService _service;
