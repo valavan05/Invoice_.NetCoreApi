@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EJiQ5z4sDW0=",
+  "dgSpecHash": "mKQVuZ1Ldxs=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\CoreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\InvoiceCoreAPI.csproj",
+  "projectFilePath": "D:\\Test\\Api\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\InvoiceCoreAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\VALAVAN S\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\VALAVAN S\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

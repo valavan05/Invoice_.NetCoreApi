@@ -1,12 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Projects\\CoreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\Test\\Api\\Invoice_.NetCoreApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3B2900C4-1022-8D14-CE02-387A3E22DCFE}|InvoiceCoreAPI\\InvoiceCoreAPI.csproj|d:\\test\\api\\invoice_.netcoreapi\\invoicecoreapi\\repositories\\categoryrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B2900C4-1022-8D14-CE02-387A3E22DCFE}|InvoiceCoreAPI\\InvoiceCoreAPI.csproj|solutionrelative:invoicecoreapi\\repositories\\categoryrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryRepositories.cs",
+              "DocumentMoniker": "D:\\Test\\Api\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\Repositories\\CategoryRepositories.cs",
+              "RelativeDocumentMoniker": "InvoiceCoreAPI\\Repositories\\CategoryRepositories.cs",
+              "ToolTip": "D:\\Test\\Api\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\Repositories\\CategoryRepositories.cs",
+              "RelativeToolTip": "InvoiceCoreAPI\\Repositories\\CategoryRepositories.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAApwGoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T06:29:46.327Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
