@@ -9,7 +9,7 @@ namespace InvoiceCoreAPI.Contracts
         Task<bool> UpdateAsync(ItemmasterDto itemmaster);
         Task<bool> DeleteAsync(int id);
 
-        Task<PagedResulDto<ItemmasterDto>> GetAllPagedAsync(
+        Task<PagedResultDto<ItemmasterDto>> GetAllPagedAsync(
 string? catCode,
 string? itemName,
 string? uom,

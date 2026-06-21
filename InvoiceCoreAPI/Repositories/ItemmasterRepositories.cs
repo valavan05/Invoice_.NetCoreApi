@@ -99,7 +99,7 @@ public class ItemmasterRepositories : IItemmasterRepository
 
         return affectedRows > 0;
     }
-    public async Task<PagedResulDto<Itemmaster>> GetAllPagedAsync(
+    public async Task<PagedResultDto<Itemmaster>> GetAllPagedAsync(
 string? catCode,
 string? itemName,
 string? uom,
@@ -148,7 +148,7 @@ int pageSize)
                 totalRecords = reader.GetInt32(0);
             }
 
-            return new PagedResulDto<Itemmaster>
+            return new PagedResultDto<Itemmaster>
             {
                 Data = items,
                 TotalRecords = totalRecords
