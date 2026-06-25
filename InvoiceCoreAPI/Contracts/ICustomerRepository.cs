@@ -1,0 +1,22 @@
+﻿using InvoiceCoreAPI.DTO;
+using InvoiceCoreAPI.Entities;
+
+namespace InvoiceCoreAPI.Contracts;
+
+public interface ICustomerRepository
+{
+    Task<int> AddAsync(Customer customer);
+    Task<IEnumerable<Customer>> GetAllAsync();
+    Task<Customer?> GetByIdAsync (int id);
+    Task<bool> UpdateAsync (Customer customer);
+    Task<bool> DeleteAsync (int  id);
+    Task<PagedResulDto<Customer>> GetAllPagedAsync(
+    string? CustomerCode,
+    string? CustomerName,
+    string? MobileNo,
+    string? City,
+    int PageNumber,
+    int PageSize
+    );
+
+}
