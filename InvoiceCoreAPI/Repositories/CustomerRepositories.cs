@@ -66,7 +66,9 @@ public class CustomerRepositories : ICustomerRepository
             @State,
             @Country,
             @ZipCode,
-            @GstNo",
+            @GstNo,
+            @IsActive,
+            @IsDeleted",
             new SqlParameter("@Id", customer.Id),
             new SqlParameter("@CustomerCode", customer.CustomerCode),
             new SqlParameter("@CustomerName", customer.CustomerName),
@@ -79,7 +81,9 @@ public class CustomerRepositories : ICustomerRepository
             new SqlParameter("@State", (object?)customer.State ?? DBNull.Value),
             new SqlParameter("@Country", (object?)customer.Country ?? DBNull.Value),
             new SqlParameter("@ZipCode", (object?)customer.ZipCode ?? DBNull.Value),
-            new SqlParameter("@GstNo", (object?)customer.GstNo ?? DBNull.Value)
+            new SqlParameter("@GstNo", (object?)customer.GstNo ?? DBNull.Value),
+            new SqlParameter("@IsActive", (object?)customer.IsActive ?? DBNull.Value),
+            new SqlParameter("@IsDeleted", (object?)customer.IsDeleted ?? DBNull.Value)
             );
         return affectedRows > 0;
     }
