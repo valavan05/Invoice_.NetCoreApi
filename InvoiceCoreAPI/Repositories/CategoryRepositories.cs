@@ -75,7 +75,7 @@ public class CategoryRepositories : ICategoryRepository
 
         return affectedRows > 0;
     }
-    public async Task<PagedResulDto<Category>> GetAllPagedAsync(
+    public async Task<PagedResultDto<Category>> GetAllPagedAsync(
 string? Code,
 string? Name,
 int pageNumber,
@@ -116,7 +116,7 @@ int pageSize)
                 totalRecords = reader.GetInt32(0);
             }
 
-            return new PagedResulDto<Category>
+            return new PagedResultDto<Category>
             {
                 Data = items,
                 TotalRecords = totalRecords

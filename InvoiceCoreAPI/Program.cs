@@ -14,12 +14,15 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 builder.Services.AddScoped<IItemmasterRepository, ItemmasterRepositories>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepositories>();
 builder.Services.AddScoped<IVendorRepository, VendorRepositories>();
+builder.Services.AddScoped<IUsersRepository, UsersRepositories>();
 builder.Services.AddScoped<IItemMasterService, ItemMasterService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IVendorService, VendorService>();
+builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddAutoMapper(typeof(ItemMasterProfile));
 builder.Services.AddAutoMapper(typeof(CategoryProfile));
 builder.Services.AddAutoMapper(typeof(VendorProfile));
+builder.Services.AddAutoMapper(typeof(UsersProfile));
 
 
 
@@ -91,8 +94,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseCors(AllowAngular);
 
-app.UseAuthorization();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

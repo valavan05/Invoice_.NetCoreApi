@@ -10,7 +10,7 @@ public interface IItemmasterRepository
     Task<Itemmaster?> GetByIdAsync(int id);
     Task<bool> UpdateAsync(Itemmaster itemmaster);
     Task<bool> DeleteAsync(int id);
-    Task<PagedResulDto<Itemmaster>> GetAllPagedAsync(
+    Task<PagedResultDto<Itemmaster>> GetAllPagedAsync(
     string? catCode,
     string? itemName,
     string? uom,
