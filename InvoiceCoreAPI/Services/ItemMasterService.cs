@@ -38,7 +38,7 @@ namespace InvoiceCoreAPI.Services
         {
             return await _repository.DeleteAsync(id);
         }
-        public async Task<PagedResulDto<ItemmasterDto>> GetAllPagedAsync(
+        public async Task<PagedResultDto<ItemmasterDto>> GetAllPagedAsync(
 string? catCode,
 string? itemName,
 string? uom,
@@ -48,7 +48,7 @@ int pageSize)
             var result = await _repository.GetAllPagedAsync(
                 catCode, itemName, uom, pageNumber, pageSize);
 
-            return new PagedResulDto<ItemmasterDto>
+            return new PagedResultDto<ItemmasterDto>
             {
                 Data = _mapper.Map<IEnumerable<ItemmasterDto>>(result.Data),
                 TotalRecords = result.TotalRecords

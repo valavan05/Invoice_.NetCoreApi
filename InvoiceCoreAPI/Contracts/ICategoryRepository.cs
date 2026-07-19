@@ -10,7 +10,7 @@ public interface ICategoryRepository
     Task<Category?> GetByIdAsync(int id);
     Task<bool> UpdateAsync(Category category);
     Task<bool> DeleteAsync(int id);
-    Task<PagedResulDto<Category>> GetAllPagedAsync(
+    Task<PagedResultDto<Category>> GetAllPagedAsync(
     string? Code,
     string? Name,
     int pageNumber,
