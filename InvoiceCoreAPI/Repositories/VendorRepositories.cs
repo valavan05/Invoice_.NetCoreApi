@@ -109,7 +109,7 @@ public class VendorRepositories : IVendorRepository
 
         return affectedRows > 0;
     }
-    public async Task<PagedResulDto<Vendor>> GetAllPagedAsync(
+    public async Task<PagedResultDto<Vendor>> GetAllPagedAsync(
     string? VendorCode,
     string? VendorName,
     string? MobileNo,
@@ -172,7 +172,7 @@ public class VendorRepositories : IVendorRepository
             totalRecords = reader.GetInt32(0);
         }
 
-        return new PagedResulDto<Vendor>
+        return new PagedResultDto<Vendor>
         {
             Data = vendors,
             TotalRecords = totalRecords

@@ -110,7 +110,7 @@ public class CustomerRepositories : ICustomerRepository
             new SqlParameter("@Id", id));
         return affectedRows > 0;
     }
-    public async Task<PagedResulDto<Customer>> GetAllPagedAsync(
+    public async Task<PagedResultDto<Customer>> GetAllPagedAsync(
         string? CustomerCode,
         string? CustomerName,
         string? MobileNo,
@@ -164,7 +164,7 @@ public class CustomerRepositories : ICustomerRepository
             {
                 totalRecords = reader.GetInt32(0);
             }
-            return new PagedResulDto<Customer>
+            return new PagedResultDto<Customer>
             {
                 Data = customers,
                 TotalRecords = totalRecords

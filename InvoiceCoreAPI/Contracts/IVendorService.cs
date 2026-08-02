@@ -14,7 +14,7 @@ namespace InvoiceCoreAPI.Contracts
 
         Task<bool> DeleteAsync(int id);
 
-        Task<PagedResulDto<VendorDto>> GetAllPagedAsync(
+        Task<PagedResultDto<VendorDto>> GetAllPagedAsync(
             string? VendorCode,
             string? VendorName,
             string? MobileNo,

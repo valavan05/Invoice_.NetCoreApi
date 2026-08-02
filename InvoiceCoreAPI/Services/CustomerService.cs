@@ -37,7 +37,7 @@ public class CustomerService : ICustomerService
     {
         return await _repository.DeleteAsync(id);
     }
-    public async Task<PagedResulDto<CustomerDto>> GetAllPagedAsync (
+    public async Task<PagedResultDto<CustomerDto>> GetAllPagedAsync (
         string? CustomerCode,
         string? CustomerName,
         string? MobileNo,
@@ -48,7 +48,7 @@ public class CustomerService : ICustomerService
     {
         var result = await _repository.GetAllPagedAsync( CustomerCode, CustomerName, MobileNo, City,
             PageNumber, PageSize );
-        return new PagedResulDto<CustomerDto>
+        return new PagedResultDto<CustomerDto>
         {
             Data = _mapper.Map<IEnumerable<CustomerDto>>(result.Data),
             TotalRecords = result.TotalRecords

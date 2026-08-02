@@ -10,7 +10,7 @@ public interface ICustomerRepository
     Task<Customer?> GetByIdAsync (int id);
     Task<bool> UpdateAsync (Customer customer);
     Task<bool> DeleteAsync (int  id);
-    Task<PagedResulDto<Customer>> GetAllPagedAsync(
+    Task<PagedResultDto<Customer>> GetAllPagedAsync(
     string? CustomerCode,
     string? CustomerName,
     string? MobileNo,

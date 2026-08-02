@@ -8,7 +8,7 @@ namespace InvoiceCoreAPI.Contracts
         Task<CustomerDto?> GetByIdAsync (int id);
         Task<bool> UpdateAsync (CustomerDto customer);
         Task<bool> DeleteAsync (int id);
-        Task<PagedResulDto<CustomerDto>> GetAllPagedAsync(
+        Task<PagedResultDto<CustomerDto>> GetAllPagedAsync(
             string? CustomerCode,
             string? CustomerName,
             string? MobileNo,

@@ -10,7 +10,7 @@ public interface IVendorRepository
     Task<Vendor?> GetByIdAsync(int id);
     Task<bool> UpdateAsync(Vendor vendor);
     Task<bool> DeleteAsync(int id);
-    Task<PagedResulDto<Vendor>> GetAllPagedAsync(
+    Task<PagedResultDto<Vendor>> GetAllPagedAsync(
         string? VendorCode,
         string? VendorName,
         string? MobileNo,
