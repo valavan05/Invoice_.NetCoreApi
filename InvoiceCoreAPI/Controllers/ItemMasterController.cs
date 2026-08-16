@@ -14,10 +14,11 @@ namespace InvoiceCoreAPI.Controllers
     public class ItemMasterController : ControllerBase
     {
         private readonly IItemMasterService _service;
-
-        public ItemMasterController(IItemMasterService service)
+        private readonly ILogger<ItemMasterController> _logger;
+        public ItemMasterController(IItemMasterService service, ILogger<ItemMasterController> logger)
         {
             _service = service;
+            _logger = logger;
         }
 
         [HttpGet("GetAll")]
@@ -188,6 +189,7 @@ namespace InvoiceCoreAPI.Controllers
             try
             {
                 var result = await _service.GetAllPagedAsync(search);
+                _logger.LogInformation("Items retrieved successfully");
 
                 return Ok(new ApiResponse<IEnumerable<ItemmasterDto>>
                 {
@@ -210,6 +212,12 @@ namespace InvoiceCoreAPI.Controllers
                     }
                 });
             }
+        }
+
+        [HttpGet("TestException")]
+        public IActionResult TestException()
+        {
+            throw new Exception("This is a test exception");
         }
     }
 }

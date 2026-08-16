@@ -1,0 +1,125 @@
+2026-08-16 19:43:15.777 +05:30 [INF] User profile is available. Using 'C:\Users\VALAVAN S\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-16 19:43:16.072 +05:30 [INF] Now listening on: http://localhost:5120
+2026-08-16 19:43:16.192 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-16 19:43:16.193 +05:30 [INF] Hosting environment: Development
+2026-08-16 19:43:16.194 +05:30 [INF] Content root path: D:\Test\Api\Invoice_.NetCoreApi\InvoiceCoreAPI
+2026-08-16 19:43:16.938 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/swagger/index.html - null null
+2026-08-16 19:43:17.471 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/swagger/index.html - 200 null text/html;charset=utf-8 560.7747ms
+2026-08-16 19:43:17.481 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_vs/browserLink - null null
+2026-08-16 19:43:17.481 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-16 19:43:17.501 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/aspnetcore-browser-refresh.js - 200 14933 application/javascript; charset=utf-8 21.2657ms
+2026-08-16 19:43:18.039 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_vs/browserLink - 200 null text/javascript; charset=UTF-8 558.0845ms
+2026-08-16 19:43:18.077 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/swagger/v1/swagger.json - null null
+2026-08-16 19:43:18.132 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 54.4347ms
+2026-08-16 19:43:48.111 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/Login/Login - application/json 51
+2026-08-16 19:43:48.132 +05:30 [INF] CORS policy execution failed.
+2026-08-16 19:43:48.134 +05:30 [INF] Request origin http://localhost:5120 does not have permission to access the resource.
+2026-08-16 19:43:48.358 +05:30 [INF] Executing endpoint 'ProductApi.Controllers.LoginController.Login (InvoiceCoreAPI)'
+2026-08-16 19:43:48.421 +05:30 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(InvoiceCoreAPI.DTO.LoginDto) on controller ProductApi.Controllers.LoginController (InvoiceCoreAPI).
+2026-08-16 19:43:48.593 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-16 19:43:48.622 +05:30 [INF] Executed action ProductApi.Controllers.LoginController.Login (InvoiceCoreAPI) in 188.6717ms
+2026-08-16 19:43:48.626 +05:30 [INF] Executed endpoint 'ProductApi.Controllers.LoginController.Login (InvoiceCoreAPI)'
+2026-08-16 19:43:48.630 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/Login/Login - 200 null application/json; charset=utf-8 518.6983ms
+2026-08-16 19:44:34.089 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/api/ItemMaster/GetAllPaged?ItemName=rice&PageNumber=1&PageSize=10 - null null
+2026-08-16 19:44:34.237 +05:30 [INF] Executing endpoint 'InvoiceCoreAPI.Controllers.ItemMasterController.GetAllPaged (InvoiceCoreAPI)'
+2026-08-16 19:44:34.260 +05:30 [INF] Route matched with {action = "GetAllPaged", controller = "ItemMaster"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPaged(InvoiceCoreAPI.DTOs.ItemmasterFilterDto) on controller InvoiceCoreAPI.Controllers.ItemMasterController (InvoiceCoreAPI).
+2026-08-16 19:44:56.011 +05:30 [INF] Items retrieved successfully
+2026-08-16 19:44:56.019 +05:30 [INF] Executing OkObjectResult, writing value of type 'InvoiceCoreAPI.Models.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[InvoiceCoreAPI.DTO.ItemmasterDto, InvoiceCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-16 19:44:56.068 +05:30 [INF] Executed action InvoiceCoreAPI.Controllers.ItemMasterController.GetAllPaged (InvoiceCoreAPI) in 21803.1782ms
+2026-08-16 19:44:56.071 +05:30 [INF] Executed endpoint 'InvoiceCoreAPI.Controllers.ItemMasterController.GetAllPaged (InvoiceCoreAPI)'
+2026-08-16 19:44:56.093 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/api/ItemMaster/GetAllPaged?ItemName=rice&PageNumber=1&PageSize=10 - 200 null application/json; charset=utf-8 22004.6821ms
+2026-08-16 19:56:29.476 +05:30 [INF] User profile is available. Using 'C:\Users\VALAVAN S\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-16 19:56:29.717 +05:30 [INF] Now listening on: http://localhost:5120
+2026-08-16 19:56:29.811 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-16 19:56:29.814 +05:30 [INF] Hosting environment: Development
+2026-08-16 19:56:29.820 +05:30 [INF] Content root path: D:\Test\Api\Invoice_.NetCoreApi\InvoiceCoreAPI
+2026-08-16 19:56:30.723 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/swagger/index.html - null null
+2026-08-16 19:56:31.729 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_vs/browserLink - null null
+2026-08-16 19:56:31.729 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-16 19:56:31.734 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/swagger/index.html - 200 null text/html;charset=utf-8 1026.7736ms
+2026-08-16 19:56:31.764 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/aspnetcore-browser-refresh.js - 200 14933 application/javascript; charset=utf-8 34.8158ms
+2026-08-16 19:56:31.850 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_vs/browserLink - 200 null text/javascript; charset=UTF-8 122.3699ms
+2026-08-16 19:56:31.889 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/swagger/v1/swagger.json - null null
+2026-08-16 19:56:32.026 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 136.5615ms
+2026-08-16 20:08:17.451 +05:30 [INF] User profile is available. Using 'C:\Users\VALAVAN S\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-16 20:08:17.636 +05:30 [INF] Now listening on: http://localhost:5120
+2026-08-16 20:08:17.726 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-16 20:08:17.727 +05:30 [INF] Hosting environment: Development
+2026-08-16 20:08:17.728 +05:30 [INF] Content root path: D:\Test\Api\Invoice_.NetCoreApi\InvoiceCoreAPI
+2026-08-16 20:08:18.651 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/swagger/index.html - null null
+2026-08-16 20:08:18.839 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/swagger/index.html - 200 null text/html;charset=utf-8 205.9843ms
+2026-08-16 20:08:18.845 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_vs/browserLink - null null
+2026-08-16 20:08:18.847 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-16 20:08:18.853 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/aspnetcore-browser-refresh.js - 200 14933 application/javascript; charset=utf-8 5.539ms
+2026-08-16 20:08:18.870 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.519ms
+2026-08-16 20:08:18.925 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/swagger/v1/swagger.json - null null
+2026-08-16 20:08:18.947 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.8522ms
+2026-08-16 20:08:40.148 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/Login/Login - application/json 51
+2026-08-16 20:08:40.164 +05:30 [INF] CORS policy execution failed.
+2026-08-16 20:08:40.166 +05:30 [INF] Request origin http://localhost:5120 does not have permission to access the resource.
+2026-08-16 20:08:40.263 +05:30 [INF] Executing endpoint 'ProductApi.Controllers.LoginController.Login (InvoiceCoreAPI)'
+2026-08-16 20:08:40.322 +05:30 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(InvoiceCoreAPI.DTO.LoginDto) on controller ProductApi.Controllers.LoginController (InvoiceCoreAPI).
+2026-08-16 20:08:40.465 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-16 20:08:40.498 +05:30 [INF] Executed action ProductApi.Controllers.LoginController.Login (InvoiceCoreAPI) in 166.4622ms
+2026-08-16 20:08:40.502 +05:30 [INF] Executed endpoint 'ProductApi.Controllers.LoginController.Login (InvoiceCoreAPI)'
+2026-08-16 20:08:40.506 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/Login/Login - 200 null application/json; charset=utf-8 357.921ms
+2026-08-16 20:10:51.836 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/api/ItemMaster/GetAllPaged?CategoryId=4&PageNumber=1&PageSize=10 - null null
+2026-08-16 20:10:51.944 +05:30 [INF] Executing endpoint 'InvoiceCoreAPI.Controllers.ItemMasterController.GetAllPaged (InvoiceCoreAPI)'
+2026-08-16 20:10:51.961 +05:30 [INF] Route matched with {action = "GetAllPaged", controller = "ItemMaster"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPaged(InvoiceCoreAPI.DTOs.ItemmasterFilterDto) on controller InvoiceCoreAPI.Controllers.ItemMasterController (InvoiceCoreAPI).
+2026-08-16 20:10:52.480 +05:30 [INF] ItemMaster Service GetAllPaged Method Called 
+2026-08-16 20:10:52.505 +05:30 [INF] ItemsMaster Service Repostiory GetAllPaged Async Method Called
+2026-08-16 20:10:57.128 +05:30 [INF] Items retrieved successfully
+2026-08-16 20:10:57.140 +05:30 [INF] Executing OkObjectResult, writing value of type 'InvoiceCoreAPI.Models.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[InvoiceCoreAPI.DTO.ItemmasterDto, InvoiceCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-16 20:10:57.185 +05:30 [INF] Executed action InvoiceCoreAPI.Controllers.ItemMasterController.GetAllPaged (InvoiceCoreAPI) in 5220.2052ms
+2026-08-16 20:10:57.189 +05:30 [INF] Executed endpoint 'InvoiceCoreAPI.Controllers.ItemMasterController.GetAllPaged (InvoiceCoreAPI)'
+2026-08-16 20:10:57.212 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/api/ItemMaster/GetAllPaged?CategoryId=4&PageNumber=1&PageSize=10 - 200 null application/json; charset=utf-8 5390.7193ms
+2026-08-16 20:38:06.362 +05:30 [INF] User profile is available. Using 'C:\Users\VALAVAN S\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-16 20:38:06.600 +05:30 [INF] Now listening on: http://localhost:5120
+2026-08-16 20:38:06.707 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-16 20:38:06.710 +05:30 [INF] Hosting environment: Development
+2026-08-16 20:38:06.711 +05:30 [INF] Content root path: D:\Test\Api\Invoice_.NetCoreApi\InvoiceCoreAPI
+2026-08-16 20:38:07.002 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/swagger/index.html - null null
+2026-08-16 20:38:07.183 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/swagger/index.html - 200 null text/html;charset=utf-8 195.2707ms
+2026-08-16 20:38:07.191 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-16 20:38:07.191 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_vs/browserLink - null null
+2026-08-16 20:38:07.197 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/aspnetcore-browser-refresh.js - 200 14933 application/javascript; charset=utf-8 6.1226ms
+2026-08-16 20:38:07.232 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.5399ms
+2026-08-16 20:38:07.275 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/swagger/v1/swagger.json - null null
+2026-08-16 20:38:07.342 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 66.7649ms
+2026-08-16 20:38:32.861 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/Login/Login - application/json 51
+2026-08-16 20:38:32.882 +05:30 [INF] CORS policy execution failed.
+2026-08-16 20:38:32.885 +05:30 [INF] Request origin http://localhost:5120 does not have permission to access the resource.
+2026-08-16 20:38:32.978 +05:30 [INF] Executing endpoint 'ProductApi.Controllers.LoginController.Login (InvoiceCoreAPI)'
+2026-08-16 20:38:33.029 +05:30 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(InvoiceCoreAPI.DTO.LoginDto) on controller ProductApi.Controllers.LoginController (InvoiceCoreAPI).
+2026-08-16 20:38:33.155 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-16 20:38:33.185 +05:30 [INF] Executed action ProductApi.Controllers.LoginController.Login (InvoiceCoreAPI) in 144.6116ms
+2026-08-16 20:38:33.189 +05:30 [INF] Executed endpoint 'ProductApi.Controllers.LoginController.Login (InvoiceCoreAPI)'
+2026-08-16 20:38:33.192 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/Login/Login - 200 null application/json; charset=utf-8 330.7754ms
+2026-08-16 20:38:59.909 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/api/ItemMaster/TestException - null null
+2026-08-16 20:39:00.034 +05:30 [INF] Executing endpoint 'InvoiceCoreAPI.Controllers.ItemMasterController.TestException (InvoiceCoreAPI)'
+2026-08-16 20:39:00.041 +05:30 [INF] Route matched with {action = "TestException", controller = "ItemMaster"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult TestException() on controller InvoiceCoreAPI.Controllers.ItemMasterController (InvoiceCoreAPI).
+2026-08-16 20:42:40.021 +05:30 [INF] Executed action InvoiceCoreAPI.Controllers.ItemMasterController.TestException (InvoiceCoreAPI) in 219975.3179ms
+2026-08-16 20:42:40.028 +05:30 [INF] Executed endpoint 'InvoiceCoreAPI.Controllers.ItemMasterController.TestException (InvoiceCoreAPI)'
+2026-08-16 20:42:40.050 +05:30 [ERR] Unhandled exception occurred. Method: GET, Path: /api/ItemMaster/TestException
+System.Exception: This is a test exception
+   at InvoiceCoreAPI.Controllers.ItemMasterController.TestException() in D:\Test\Api\Invoice_.NetCoreApi\InvoiceCoreAPI\Controllers\ItemMasterController.cs:line 220
+   at lambda_method11(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at InvoiceCoreAPI.Middleware.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in D:\Test\Api\Invoice_.NetCoreApi\InvoiceCoreAPI\Middleware\ExceptionHandlingMiddleware.cs:line 23
+2026-08-16 20:42:40.114 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/api/ItemMaster/TestException - 500 null application/json 220206.3812ms
