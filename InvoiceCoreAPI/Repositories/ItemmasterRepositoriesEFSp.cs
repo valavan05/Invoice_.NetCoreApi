@@ -1,4 +1,5 @@
 ﻿using InvoiceCoreAPI.Contracts;
+using InvoiceCoreAPI.Controllers;
 using InvoiceCoreAPI.Data;
 using InvoiceCoreAPI.DTO;
 using InvoiceCoreAPI.DTOs;
@@ -12,9 +13,11 @@ namespace InvoiceCoreAPI.Repositories;
 public class ItemmasterRepositoriesEFSp : IItemmasterRepository
 {
     private readonly AppDbContext _dbContext;
-    public ItemmasterRepositoriesEFSp(AppDbContext dbContext)
+    private readonly ILogger<ItemmasterRepositoriesEFSp> _logger;
+    public ItemmasterRepositoriesEFSp(AppDbContext dbContext, ILogger<ItemmasterRepositoriesEFSp> logger)
     {
         _dbContext = dbContext;
+        _logger = logger;
     }
     public async Task<int> AddAsync(Itemmaster itemmaster)
     {
@@ -103,6 +106,7 @@ public class ItemmasterRepositoriesEFSp : IItemmasterRepository
     public async Task<PagedResultDto<Itemmaster>> GetAllPagedAsync(
      ItemmasterFilterDto search)
     {
+        _logger.LogInformation("ItemsMaster Service Repostiory GetAllPaged Async Method Called");
         using var connection = _dbContext.Database.GetDbConnection();
 
         if (connection.State != ConnectionState.Open)
