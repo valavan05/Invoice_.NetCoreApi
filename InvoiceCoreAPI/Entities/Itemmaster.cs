@@ -10,8 +10,7 @@ public class Itemmaster
     [Key]
     public int Id { get; set; }
     [Required]
-    [StringLength(5)]
-    public string CatCode { get; set; }
+    public int CategoryId { get; set; }
     [Required]
     [StringLength(25)]
     public string ItemBarCode { get; set; }

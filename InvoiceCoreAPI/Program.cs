@@ -11,12 +11,12 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddScoped<IItemmasterRepository, ItemmasterRepositories>();
+builder.Services.AddScoped<IItemmasterRepository, ItemmasterRepositoriesEFSp>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepositories>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepositories>();
 builder.Services.AddScoped<IVendorRepository, VendorRepositories>();
 builder.Services.AddScoped<IUsersRepository, UsersRepositories>();
-builder.Services.AddScoped<IItemMasterService, ItemMasterService>();
+builder.Services.AddScoped<IItemMasterService, ItemMasterServiceEFSp>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IVendorService, VendorService>();
