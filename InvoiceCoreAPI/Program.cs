@@ -1,15 +1,18 @@
 using InvoiceCoreAPI.Contracts;
 using InvoiceCoreAPI.Data;
 using InvoiceCoreAPI.Mapper;
+using InvoiceCoreAPI.Middleware;
 using InvoiceCoreAPI.Repositories;
 using InvoiceCoreAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Text;
 using Serilog;
-using InvoiceCoreAPI.Middleware;
+using System.Data;
+using System.Text;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -21,23 +24,54 @@ Log.Logger = new LoggerConfiguration()
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseSerilog();
-
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IDbConnection>(sp =>
+{
+    var configuration = sp.GetRequiredService<IConfiguration>();
+
+    var connectionString =
+        configuration.GetConnectionString("DefaultConnection");
+
+    return new SqlConnection(connectionString);
+});
 builder.Services.AddScoped<IItemmasterRepository, ItemmasterRepositoriesEFSp>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepositories>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepositories>();
 builder.Services.AddScoped<IVendorRepository, VendorRepositories>();
-builder.Services.AddScoped<IUsersRepository, UsersRepositories>();
+builder.Services.AddScoped<IUsersRepository, UserRepositorySpDap>();
 builder.Services.AddScoped<IItemMasterService, ItemMasterServiceEFSp>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IVendorService, VendorService>();
-builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<IUsersService, UserServiceSpDap>();
 builder.Services.AddAutoMapper(typeof(ItemMasterProfile));
 builder.Services.AddAutoMapper(typeof(CategoryProfile));
 builder.Services.AddAutoMapper(typeof(CustomerProfile));
 builder.Services.AddAutoMapper(typeof(VendorProfile));
 builder.Services.AddAutoMapper(typeof(UsersProfile));
+
+builder.Services.AddApiVersioning(options =>
+
+{
+
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+
+    options.AssumeDefaultVersionWhenUnspecified = true;
+
+    options.ReportApiVersions = true;
+
+});
+
+builder.Services.AddVersionedApiExplorer(options =>
+
+{
+
+    options.GroupNameFormat = "'v'VVV";
+
+    options.SubstituteApiVersionInUrl = true;
+
+});
+
 
 var AllowAngular = "_allowAngular";
 builder.Services.AddCors(options =>

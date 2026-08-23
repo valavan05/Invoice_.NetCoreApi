@@ -7,18 +7,12 @@ namespace InvoiceCoreAPI.Contracts;
 public interface IUsersRepository
 {
     Task<int> AddAsync(Users users);
-    Task<IEnumerable<Users>> GetAllAsync();
+    Task<IEnumerable<Users?>> GetAllAsync();
     Task<Users?> GetByIdAsync(int id);
-    Task<bool> UpdateAsync(Users users);
-    Task<bool> DeleteAsync(int id);
-    Task<PagedResultDto<Users>> GetAllPagedAsync(
-        string? UserName,
-        string? FirstName,
-        string? LastName,
-        string? PhoneNumber,
-        string? City,
-        DateTime? DateOfBirth,
-        bool? IsActive,
-        int PageNumber,
-        int PageSize);
+    Task<Users?> GetByUserNameAsync(string userName);
+    Task<Users?> GetByEmailAsync(string email);
+    Task<bool> UpdateAsync(int id,Users users);
+    Task<bool> DeleteAsync(int id, string updatedBy);
+    Task<PagedResultDto<Users>> GetAllPagedAsync(UsersFilterDto filter);
+    Task<bool> UpdateLastLoginAsync(int id);
 }
