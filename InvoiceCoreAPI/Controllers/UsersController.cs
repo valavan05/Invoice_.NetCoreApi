@@ -1,226 +1,208 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using InvoiceCoreAPI.Contracts;
+﻿using InvoiceCoreAPI.Contracts;
 using InvoiceCoreAPI.DTO;
-using InvoiceCoreAPI.Models;
 using Microsoft.AspNetCore.Authorization;
-using InvoiceCoreAPI.Services;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
-namespace InvoiceCoreAPI.Controllers
+namespace InvoiceCoreAPI.Controllers;
+
+[ApiController]
+[Route("api/v{version:apiVersion}/[controller]")]
+[ApiVersion("1.0")]
+[Authorize]
+public class UserController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    [Authorize]
-    public class UsersController : ControllerBase
+    private readonly IUsersService _service;
+    private readonly ILogger<UserController> _logger;
+
+    public UserController(
+        IUsersService service,
+        ILogger<UserController> logger)
     {
-        private readonly IUsersService _service;
+        _service = service;
+        _logger = logger;
+    }
 
-        public UsersController(IUsersService service)
+    [HttpGet("GetAll")]
+    public async Task<IActionResult> GetAll()
+    {
+        try
         {
-            _service = service;
+            var response = await _service.GetAllAsync();
+
+            return Ok(response);
         }
-
-        [HttpGet("GetAll")]
-        public async Task<IActionResult> GetAll()
+        catch (Exception ex)
         {
-            try
-            {
-                var data = await _service.GetAllAsync();
-                return Ok(new ApiResponse<IEnumerable<UsersDto>>
-                {
-                    Success = true,
-                    Message = "Users retrieved successfully",
-                    Data = data
-                });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ApiResponse<string>
+            _logger.LogError(
+                ex,
+                "Error occurred while getting all users.");
+
+            return StatusCode(
+                StatusCodes.Status500InternalServerError,
+                new
                 {
                     Success = false,
-                    Message = "Error retrieving Users",
-                    Error = new ApiError
-                    {
-                        Code = "500",
-                        Details = ex.Message
-                    }
+                    Message = "An error occurred while retrieving users."
                 });
-            }
-        }
-
-        [HttpGet("GetById/{id}")]
-        public async Task<IActionResult> GetById(int id)
-        {
-            try
-            {
-                var user = await _service.GetByIdAsync(id);
-                if (user == null)
-                {
-                    return NotFound(new ApiResponse<string>
-                    {
-                        Success = false,
-                        Message = "user not found"
-                    });
-                }
-                return Ok(new ApiResponse<UsersDto>
-                {
-                    Success = true,
-                    Message = "User retrieved successfully",
-                    Data = user
-                });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ApiResponse<string>
-                {
-                    Success = false,
-                    Message = "Error retrieving user",
-                    Error = new ApiError
-                    {
-                        Code = "500",
-                        Details = ex.Message
-                    }
-                });
-            }
-        }
-
-        [HttpPost("Create")]
-        public async Task<IActionResult> Create(UsersDto dto)
-        {
-            try
-            {
-                var id = await _service.AddAsync(dto);
-                return Ok(new ApiResponse<int>
-                {
-                    Success = true,
-                    Message = "user created successfully",
-                    Data = id
-                });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ApiResponse<string>
-                {
-                    Success = false,
-                    Message = "Error creating user",
-                    Error = new ApiError
-                    {
-                        Code = "500",
-                        Details = ex.Message
-                    }
-                });
-            }
-        }
-
-        [HttpPut("Update/{id}")]
-        public async Task<IActionResult> Update(int id, UsersDto dto)
-        {
-            try
-            {
-                dto.Id = id;
-                var updated = await _service.UpdateAsync(dto);
-                if (!updated)
-                {
-                    return NotFound(new ApiResponse<string>
-                    {
-                        Success = false,
-                        Message = "User not found"
-                    });
-                }
-                return Ok(new ApiResponse<string>
-                {
-                    Success = true,
-                    Message = "User Updated successfully"
-                });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ApiResponse<string>
-                {
-                    Success = false,
-                    Message = "Error updating user",
-                    Error = new ApiError
-                    {
-                        Code = "500",
-                        Details = ex.Message
-                    }
-                });
-            }
-        }
-
-        [HttpDelete("Delete/{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            try
-            {
-                var deleted = await _service.DeleteAsync(id);
-                if (!deleted)
-                {
-                    return NotFound(new ApiResponse<string>
-                    {
-                        Success = false,
-                        Message = "user not found"
-                    });
-                }
-                return Ok(new ApiResponse<string>
-                {
-                    Success = true,
-                    Message = "user deleted successfully"
-                });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ApiResponse<string>
-                {
-                    Success = false,
-                    Message = "Error deleting user",
-                    Error = new ApiError
-
-                    {
-                        Code = "500",
-                        Details = ex.Message
-                    }
-                });
-            }
-        }
-        [HttpGet("GetAllPaged")]
-        public async Task<IActionResult> GetAllPaged(
-            string? UserName,
-            string? FirstName,
-            string? LastName,
-            string? PhoneNumber,
-            string? City,
-            DateTime? DateOfBirth,
-            bool? IsActive,
-            int pageNumber = 1,
-            int pageSize = 10)
-        {
-            try
-            {
-                var result = await _service.GetAllPagedAsync(
-                    UserName, FirstName, LastName, PhoneNumber, City, DateOfBirth, IsActive, pageNumber, pageSize);
-
-                return Ok(new ApiResponse<IEnumerable<UsersDto>>
-                {
-                    Success = true,
-                    Message = "Users retrieved successfully",
-                    Data = result.Data,
-                    TotalRecords = result.TotalRecords
-                });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ApiResponse<string>
-                {
-                    Success = false,
-                    Message = "Error retrieving users",
-                    Error = new ApiError
-                    {
-                        Code = "500",
-                        Details = ex.Message
-                    }
-                });
-            }
         }
     }
+
+    [HttpGet("GetById/{id:int}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        try
+        {
+            var response = await _service.GetByIdAsync(id);
+
+            if (!response.Success)
+            {
+                return NotFound(response);
+            }
+
+            return Ok(response);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(
+                ex,
+                "Error occurred while getting user. UserId: {UserId}",
+                id);
+
+            return StatusCode(
+                StatusCodes.Status500InternalServerError,
+                new
+                {
+                    Success = false,
+                    Message = "An error occurred while retrieving the user."
+                });
+        }
+    }
+
+    [HttpPost("GetPaged")]
+    public async Task<IActionResult> GetPaged(
+        [FromBody] UsersFilterDto filter)
+    {
+        try
+        {
+            var response =
+                await _service.GetAllPagedAsync(filter);
+
+            return Ok(response);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(
+                ex,
+                "Error occurred while getting paged users.");
+
+            return StatusCode(
+                StatusCodes.Status500InternalServerError,
+                new
+                {
+                    Success = false,
+                    Message = "An error occurred while retrieving users."
+                });
+        }
+    }
+
+    [HttpPost("Create")]
+    [AllowAnonymous]
+    public async Task<IActionResult> Create(
+        [FromBody] UsersCreateDto dto)
+    {
+        try
+        {
+            var response =
+                await _service.AddAsync(dto);
+
+            if (!response.Success)
+            {
+                return BadRequest(response);
+            }
+
+            return Ok(response);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(
+                ex,
+                "Error occurred while creating user.");
+
+            return StatusCode(
+                StatusCodes.Status500InternalServerError,
+                new
+                {
+                    Success = false,
+                    Message = "An error occurred while creating the user."
+                });
+        }
+    }
+
+    [HttpPut("Update/{id:int}")]
+    public async Task<IActionResult> Update(
+        int id,
+        [FromBody] UserUpdateDto dto)
+    {
+        try
+        {
+            var response =
+                await _service.UpdateAsync(id, dto);
+
+            if (!response.Success)
+            {
+                return BadRequest(response);
+            }
+
+            return Ok(response);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(
+                ex,
+                "Error occurred while updating user. UserId: {UserId}",
+                id);
+
+            return StatusCode(
+                StatusCodes.Status500InternalServerError,
+                new
+                {
+                    Success = false,
+                    Message = "An error occurred while updating the user."
+                });
+        }
+    }
+
+    [HttpDelete("Delete/{id:int}")]
+    public async Task<IActionResult> Delete(int id,string updatedBy)
+    {
+        try
+        {
+            var response =
+                await _service.DeleteAsync(id, updatedBy);
+
+            if (!response.Success)
+            {
+                return BadRequest(response);
+            }
+
+            return Ok(response);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(
+                ex,
+                "Error occurred while deleting user. UserId: {UserId}",
+                id);
+
+            return StatusCode(
+                StatusCodes.Status500InternalServerError,
+                new
+                {
+                    Success = false,
+                    Message = "An error occurred while deleting the user."
+                });
+        }
+    }
+
 }
