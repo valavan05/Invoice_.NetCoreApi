@@ -44,6 +44,8 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IVendorService, VendorService>();
 builder.Services.AddScoped<IUsersService, UserServiceSpDap>();
+builder.Services.AddScoped<IMockAIProvider, MockAIProvider>();
+builder.Services.AddScoped<IAIService, AIService>();
 builder.Services.AddAutoMapper(typeof(ItemMasterProfile));
 builder.Services.AddAutoMapper(typeof(CategoryProfile));
 builder.Services.AddAutoMapper(typeof(CustomerProfile));
