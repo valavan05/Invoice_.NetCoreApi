@@ -1,0 +1,100 @@
+2026-09-12 13:18:48.449 +05:30 [INF] User profile is available. Using 'C:\Users\VALAVAN S\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-12 13:18:48.760 +05:30 [INF] Now listening on: http://localhost:5120
+2026-09-12 13:18:49.085 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-12 13:18:49.086 +05:30 [INF] Hosting environment: Development
+2026-09-12 13:18:49.087 +05:30 [INF] Content root path: D:\Test\Api\Invoice_.NetCoreApi\InvoiceCoreAPI
+2026-09-12 13:18:50.047 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/swagger/index.html - null null
+2026-09-12 13:18:50.547 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_vs/browserLink - null null
+2026-09-12 13:18:50.551 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/swagger/index.html - 200 null text/html;charset=utf-8 547.8484ms
+2026-09-12 13:18:50.595 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-12 13:18:50.606 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/aspnetcore-browser-refresh.js - 200 14933 application/javascript; charset=utf-8 11.047ms
+2026-09-12 13:18:50.671 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_vs/browserLink - 200 null text/javascript; charset=UTF-8 124.8894ms
+2026-09-12 13:18:50.708 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/swagger/v1/swagger.json - null null
+2026-09-12 13:18:50.793 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 85.5832ms
+2026-09-12 13:19:47.679 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/v1/Login - application/json 55
+2026-09-12 13:19:47.701 +05:30 [INF] CORS policy execution failed.
+2026-09-12 13:19:47.703 +05:30 [INF] Request origin http://localhost:5120 does not have permission to access the resource.
+2026-09-12 13:19:47.813 +05:30 [INF] Executing endpoint 'InvoiceCoreAPI.Controllers.LoginController.Login (InvoiceCoreAPI)'
+2026-09-12 13:19:47.884 +05:30 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(InvoiceCoreAPI.DTO.LoginRequestDto) on controller InvoiceCoreAPI.Controllers.LoginController (InvoiceCoreAPI).
+2026-09-12 13:19:49.455 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[InvoiceCoreAPI.DTO.LoginResponseDto, InvoiceCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 13:19:49.515 +05:30 [INF] Executed action InvoiceCoreAPI.Controllers.LoginController.Login (InvoiceCoreAPI) in 1619.4156ms
+2026-09-12 13:19:49.520 +05:30 [INF] Executed endpoint 'InvoiceCoreAPI.Controllers.LoginController.Login (InvoiceCoreAPI)'
+2026-09-12 13:19:49.524 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/v1/Login - 200 null application/json; charset=utf-8 1846.1568ms
+2026-09-12 13:20:57.422 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/ai/ask - application/json 49
+2026-09-12 13:20:57.433 +05:30 [INF] CORS policy execution failed.
+2026-09-12 13:20:57.438 +05:30 [INF] Request origin http://localhost:5120 does not have permission to access the resource.
+2026-09-12 13:20:57.555 +05:30 [INF] Executing endpoint 'InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI)'
+2026-09-12 13:20:57.567 +05:30 [INF] Route matched with {action = "Ask", controller = "AI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Ask(InvoiceCoreAPI.Models.AI.AIAskRequest) on controller InvoiceCoreAPI.Controllers.AIController (InvoiceCoreAPI).
+2026-09-12 13:20:57.907 +05:30 [INF] Processing AI question: how many active items in rice
+2026-09-12 13:20:57.914 +05:30 [INF] Mock LLM processing question: how many active items in rice
+2026-09-12 13:20:57.928 +05:30 [INF] Mock LLM returned intent: {"intent":"CategoryItemCount","categoryName":"Rice","categoryActiveOnly":true,"itemActiveOnly":true}
+2026-09-12 13:20:57.931 +05:30 [INF] Intent received from Mock LLM: {"intent":"CategoryItemCount","categoryName":"Rice","categoryActiveOnly":true,"itemActiveOnly":true}
+2026-09-12 13:20:59.468 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_Category_GetAll
+2026-09-12 13:20:59.644 +05:30 [INF] Database result - Category: Rice, ItemActiveOnly: true, Count: 2
+2026-09-12 13:20:59.649 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[InvoiceCoreAPI.Models.AI.AIAskResponse, InvoiceCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 13:20:59.655 +05:30 [INF] Executed action InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI) in 2085.0727ms
+2026-09-12 13:20:59.658 +05:30 [INF] Executed endpoint 'InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI)'
+2026-09-12 13:20:59.672 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/ai/ask - 200 null application/json; charset=utf-8 2250.4293ms
+2026-09-12 13:22:51.543 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5120/api/Login/Login - null null
+2026-09-12 13:22:51.554 +05:30 [INF] CORS policy execution successful.
+2026-09-12 13:22:51.565 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5120/api/Login/Login - 204 null null 23.1619ms
+2026-09-12 13:22:51.575 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/Login/Login - application/json 42
+2026-09-12 13:22:51.581 +05:30 [INF] CORS policy execution successful.
+2026-09-12 13:22:51.595 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30-07-2026 13:09:51', Current time (UTC): '12-09-2026 07:52:51'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-09-12 13:22:51.657 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30-07-2026 13:09:51', Current time (UTC): '12-09-2026 07:52:51'.
+2026-09-12 13:22:51.659 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/Login/Login - 404 0 null 84.0336ms
+2026-09-12 13:22:51.668 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5120/api/Login/Login, Response status code: 404
+2026-09-12 13:23:34.580 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5120/api/Login/Login - null null
+2026-09-12 13:23:34.604 +05:30 [INF] CORS policy execution successful.
+2026-09-12 13:23:34.607 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5120/api/Login/Login - 204 null null 27.5417ms
+2026-09-12 13:23:34.661 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/Login/Login - application/json 46
+2026-09-12 13:23:34.672 +05:30 [INF] CORS policy execution successful.
+2026-09-12 13:23:34.685 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30-07-2026 13:09:51', Current time (UTC): '12-09-2026 07:53:34'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-09-12 13:23:34.698 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30-07-2026 13:09:51', Current time (UTC): '12-09-2026 07:53:34'.
+2026-09-12 13:23:34.703 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/Login/Login - 404 0 null 41.7126ms
+2026-09-12 13:23:34.719 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5120/api/Login/Login, Response status code: 404
+2026-09-12 13:23:36.916 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/Login/Login - application/json 46
+2026-09-12 13:23:36.924 +05:30 [INF] CORS policy execution successful.
+2026-09-12 13:23:36.929 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30-07-2026 13:09:51', Current time (UTC): '12-09-2026 07:53:36'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-09-12 13:23:36.936 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30-07-2026 13:09:51', Current time (UTC): '12-09-2026 07:53:36'.
+2026-09-12 13:23:36.940 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/Login/Login - 404 0 null 23.2367ms
+2026-09-12 13:23:36.957 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5120/api/Login/Login, Response status code: 404
+2026-09-12 13:24:08.042 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5120/api/Login/Login - null null
+2026-09-12 13:24:08.057 +05:30 [INF] CORS policy execution successful.
+2026-09-12 13:24:08.061 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5120/api/Login/Login - 204 null null 18.4575ms
+2026-09-12 13:24:08.071 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/Login/Login - application/json 46
+2026-09-12 13:24:08.091 +05:30 [INF] CORS policy execution successful.
+2026-09-12 13:24:08.105 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30-07-2026 13:09:51', Current time (UTC): '12-09-2026 07:54:08'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-09-12 13:24:08.117 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '30-07-2026 13:09:51', Current time (UTC): '12-09-2026 07:54:08'.
+2026-09-12 13:24:08.121 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/Login/Login - 404 0 null 49.7784ms
+2026-09-12 13:24:08.139 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5120/api/Login/Login, Response status code: 404
+2026-09-12 13:34:05.067 +05:30 [INF] User profile is available. Using 'C:\Users\VALAVAN S\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-12 13:34:05.181 +05:30 [INF] Now listening on: http://localhost:5120
+2026-09-12 13:34:05.272 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-12 13:34:05.273 +05:30 [INF] Hosting environment: Development
+2026-09-12 13:34:05.275 +05:30 [INF] Content root path: D:\Test\Api\Invoice_.NetCoreApi\InvoiceCoreAPI
+2026-09-12 13:34:05.934 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/swagger/index.html - null null
+2026-09-12 13:34:06.223 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/swagger/index.html - 200 null text/html;charset=utf-8 300.0039ms
+2026-09-12 13:34:06.225 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-12 13:34:06.232 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_vs/browserLink - null null
+2026-09-12 13:34:06.237 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/aspnetcore-browser-refresh.js - 200 14933 application/javascript; charset=utf-8 13.4705ms
+2026-09-12 13:34:06.379 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_vs/browserLink - 200 null text/javascript; charset=UTF-8 146.3383ms
+2026-09-12 13:34:06.401 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5120/swagger/v1/swagger.json - null null
+2026-09-12 13:34:06.452 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 51.2964ms
