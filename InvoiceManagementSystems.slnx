@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="Invoice.AI/Invoice.AI.csproj" Id="5eee9710-776a-4242-b479-5b0ab125ed93" />
   <Project Path="Invoice.BAL/Invoice.BAL.csproj" Id="9155fde6-d58e-482c-b960-c211ed724333" />
+  <Project Path="Invoice.DAL.Test/Invoice.DAL.Test.csproj" Id="a2aa981c-5a59-4e9e-a01e-6f30d37040ce" />
   <Project Path="Invoice.DAL/Invoice.DAL.csproj" Id="11dced2b-2240-4e3c-bba6-18d1db893bde" />
   <Project Path="Invoice.Data/Invoice.Data.csproj" Id="7fd38a6e-516e-4dbd-97e5-f9b1d6cafe08" />
   <Project Path="Invoice.DTOs/Invoice.DTOs.csproj" Id="e0edd4ab-7334-4d00-87eb-a4992b1860d3" />
