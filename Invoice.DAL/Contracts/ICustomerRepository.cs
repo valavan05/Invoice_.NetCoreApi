@@ -18,4 +18,5 @@ public interface ICustomerRepository
     int PageNumber,
     int PageSize
     );
+    Task<int> GetCustomerCountAsync(bool? activeOnly);
 }

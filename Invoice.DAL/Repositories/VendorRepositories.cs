@@ -179,5 +179,29 @@ namespace Invoice.DAL.Repositories
                 TotalRecords = totalRecords
             };
         }
+        public async Task<int> GetVendorCountAsync(bool? activeOnly)
+
+        {
+
+            var vendors = await GetAllAsync();
+
+
+            var query = vendors.AsEnumerable();
+
+
+            if (activeOnly.HasValue)
+
+            {
+
+                query = query.Where(x =>
+
+                    x.IsActive == activeOnly.Value);
+
+            }
+
+
+            return query.Count();
+
+        }
     }
 }
