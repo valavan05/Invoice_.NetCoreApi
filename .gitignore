@@ -10,3 +10,8 @@ bin/
 obj/
 **/bin/
 **/obj/
+
+ 
+TestResults/
+coveragereport/
+CoverageReport/
