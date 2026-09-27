@@ -2,6 +2,8 @@
   <Project Path="Invoice.AI/Invoice.AI.csproj" Id="5eee9710-776a-4242-b479-5b0ab125ed93" />
   <Project Path="Invoice.BAL.Test/Invoice.BAL.Test.csproj" Id="0a19348c-09a6-4b81-942c-c6e9b1d388ca" />
   <Project Path="Invoice.BAL/Invoice.BAL.csproj" Id="9155fde6-d58e-482c-b960-c211ed724333" />
+  <Project Path="Invoice.CoreAPI.Test/Invoice.CoreAPI.Test.csproj" Id="92a403d5-f619-4573-b15e-be9eae890565" />
+  <Project Path="Invoice.CoreAPI/Invoice.CoreAPI.csproj" Id="b946363f-98cc-4bc9-9ad4-638e60a89af9" />
   <Project Path="Invoice.DAL.Test/Invoice.DAL.Test.csproj" Id="a2aa981c-5a59-4e9e-a01e-6f30d37040ce" />
   <Project Path="Invoice.DAL/Invoice.DAL.csproj" Id="11dced2b-2240-4e3c-bba6-18d1db893bde" />
   <Project Path="Invoice.Data/Invoice.Data.csproj" Id="7fd38a6e-516e-4dbd-97e5-f9b1d6cafe08" />

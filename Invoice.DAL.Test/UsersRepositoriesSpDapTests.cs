@@ -820,6 +820,7 @@ public class UserRepositoriesSpDapTests
 
         var filter = new Invoice.DTOs.UserFilterDto
         {
+            UserName = "TSTUSER",
             IsActive = true,
             PageNumber = 1,
             PageSize = 10

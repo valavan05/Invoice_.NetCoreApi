@@ -2,7 +2,7 @@
 
 namespace Invoice.BAL.Contracts
 {
-    public interface IItemMasterService
+    public interface IItemmasterService
     {
         Task<int> AddAsync(ItemmasterDto dto);
         Task<IEnumerable<ItemmasterDto>> GetAllAsync();

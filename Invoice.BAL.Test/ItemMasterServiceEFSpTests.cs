@@ -9,9 +9,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Invoice.BAL.Test.Services;
 
-public class ItemMasterServiceEFSpTests
+public class ItemmasterServiceEFSpTests
 {
-    public ItemMasterServiceEFSpTests()
+    public ItemmasterServiceEFSpTests()
     {
         _repositoryMock = new Mock<IItemmasterRepository>();
 
@@ -27,13 +27,13 @@ public class ItemMasterServiceEFSpTests
 
         _mapper = configuration.CreateMapper();
 
-        _service = new ItemMasterServiceEFSp(
+        _service = new ItemmasterServiceEFSp(
             _repositoryMock.Object,
             _mapper);
     }
     private readonly Mock<IItemmasterRepository> _repositoryMock;
     private readonly IMapper _mapper;
-    private readonly ItemMasterServiceEFSp _service;
+    private readonly ItemmasterServiceEFSp _service;
 
 
     // ---------------------------------------------------------

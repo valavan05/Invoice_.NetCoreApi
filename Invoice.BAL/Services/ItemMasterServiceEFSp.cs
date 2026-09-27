@@ -12,12 +12,12 @@ using System.Threading.Tasks;
 
 namespace Invoice.BAL.Services
 {
-    public class ItemMasterServiceEFSp : IItemMasterService
+    public class ItemmasterServiceEFSp : IItemmasterService
     {
         private readonly IItemmasterRepository _repository;
         private readonly IMapper _mapper;
         //private readonly ILogger<ItemMasterServiceEFSp> _logger;
-        public ItemMasterServiceEFSp(IItemmasterRepository repository, IMapper mapper)
+        public ItemmasterServiceEFSp(IItemmasterRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
