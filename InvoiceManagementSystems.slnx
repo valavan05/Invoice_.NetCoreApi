@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Invoice.AI/Invoice.AI.csproj" Id="99c639e4-146a-40b9-9b0c-523d7ad91b94" />
   <Project Path="Invoice.BAL.Test/Invoice.BAL.Test.csproj" Id="0a19348c-09a6-4b81-942c-c6e9b1d388ca" />
   <Project Path="Invoice.BAL/Invoice.BAL.csproj" Id="9155fde6-d58e-482c-b960-c211ed724333" />
   <Project Path="Invoice.CoreAPI.Test/Invoice.CoreAPI.Test.csproj" Id="92a403d5-f619-4573-b15e-be9eae890565" />
