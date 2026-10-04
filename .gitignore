@@ -4,9 +4,16 @@
 *.user
 *.userosscache
 *.sln.docstates
+Invoice.CoreAPI/logs/*.txt
 
 # Build files
 bin/
 obj/
 **/bin/
 **/obj/
+
+ 
+TestResults/
+coveragereport/
+CoverageReport/
+InvoiceCoreAPI/logs/*.txt
