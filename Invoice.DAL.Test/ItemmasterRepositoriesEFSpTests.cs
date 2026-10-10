@@ -474,8 +474,13 @@ public class ItemmasterRepositoriesEFSpTests
 
         var repository = new ItemmasterRepositoriesEFSp(context);
 
+        var category = await context.Categories
+            .AsNoTracking()
+            .FirstAsync(x => x.Code == "TST01");
+
         var search = new ItemmasterFilterDto
         {
+            CategoryId = category.Id, // NEW LINE
             IsActive = true,
             PageNumber = 1,
             PageSize = 10
