@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "/si3E4Fjcmw=",
+  "success": true,
+  "projectFilePath": "D:\\IMS Assessment 1 Project\\IMS Assessment 1\\Invoice.CoreAPI_Assessment_1\\Invoice.CoreAPI_Assessment_1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\VALAVAN S\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.12\\microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",
+    "C:\\Users\\VALAVAN S\\.nuget\\packages\\microsoft.openapi\\2.12.0\\microsoft.openapi.2.12.0.nupkg.sha512"
+  ],
+  "logs": []
+}
