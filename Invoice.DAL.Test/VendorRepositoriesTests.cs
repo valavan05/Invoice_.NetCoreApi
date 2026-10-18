@@ -149,6 +149,7 @@ public class VendorRepositoriesTests
     [Fact]
     public async Task GetAllAsync_ShouldReturnAllTestVendors()
     {
+
         await using var context = CreateDbContext();
         var repository = new VendorRepositories(context);
 
@@ -175,6 +176,7 @@ public class VendorRepositoriesTests
     public async Task GetAllAsync_ShouldReturnActiveInactiveAndDeletedVendors()
     {
         await using var context = CreateDbContext();
+
         var repository = new VendorRepositories(context);
 
         await SeedTestDataAsync(context);
