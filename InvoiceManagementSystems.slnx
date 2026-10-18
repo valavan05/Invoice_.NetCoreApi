@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="IMS.MCP.Server/IMS.MCP.Server.csproj" Id="bea2cb03-987c-46b9-892e-98d5460fc836" />
   <Project Path="Invoice.AI.Test/Invoice.AI.Test.csproj" Id="e8a2cd0b-6420-4ca3-b5e7-785b51bcec57" />
   <Project Path="Invoice.AI/Invoice.AI.csproj" Id="99c639e4-146a-40b9-9b0c-523d7ad91b94" />
   <Project Path="Invoice.BAL.Test/Invoice.BAL.Test.csproj" Id="0a19348c-09a6-4b81-942c-c6e9b1d388ca" />
