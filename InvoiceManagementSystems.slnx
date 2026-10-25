@@ -11,5 +11,6 @@
   <Project Path="Invoice.Data/Invoice.Data.csproj" Id="7fd38a6e-516e-4dbd-97e5-f9b1d6cafe08" />
   <Project Path="Invoice.DTOs/Invoice.DTOs.csproj" Id="e0edd4ab-7334-4d00-87eb-a4992b1860d3" />
   <Project Path="Invoice.Model/Invoice.Model.csproj" Id="925ba989-bae5-4cf0-8e02-b04eb804953f" />
+  <Project Path="Invoice.RAG/Invoice.RAG.csproj" Id="1f235d04-00bb-4c5a-aec8-9a9898814755" />
   <Project Path="InvoiceCoreAPI/InvoiceCoreAPI.csproj" />
 </Solution>
