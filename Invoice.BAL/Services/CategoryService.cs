@@ -40,13 +40,14 @@ public class CategoryService : ICategoryService
         return await _repository.DeleteAsync(id);
     }
     public async Task<PagedResultDto<CategoryDto>> GetAllPagedAsync(
-string? catCode,
-string? itemName,
+string? Code,
+string? Name,
+bool? IsActive,
 int pageNumber,
 int pageSize)
     {
         var result = await _repository.GetAllPagedAsync(
-            catCode, itemName, pageNumber, pageSize);
+            Code, Name, IsActive, pageNumber, pageSize);
 
         return new PagedResultDto<CategoryDto>
         {
