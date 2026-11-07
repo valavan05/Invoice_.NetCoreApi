@@ -15,6 +15,7 @@ namespace Invoice.DAL.Contracts
         Task<PagedResultDto<CategoryEntity>> GetAllPagedAsync(
         string? Code,
         string? Name,
+        bool? IsActive,
         int pageNumber,
         int pageSize);
 

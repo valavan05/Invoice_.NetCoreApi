@@ -1,18 +1,18 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-
+﻿using Asp.Versioning;
 using Invoice.BAL.Contracts;
 using Invoice.DTOs;
-
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Invoice.CoreAPI.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
+[ApiVersion(1.0)]
 public class LoginController : ControllerBase
 {
     private readonly IUsersService _userService;
