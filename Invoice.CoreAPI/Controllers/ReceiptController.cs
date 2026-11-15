@@ -15,10 +15,18 @@ public class ReceiptController : ApiControllerBase
     private readonly IReceiptService _service;
     private readonly ILogger<ReceiptController> _logger;
 
-    public ReceiptController(IReceiptService service, ILogger<ReceiptController> logger)
+    private readonly IDocumentPrintService _print;
+
+    public ReceiptController(IReceiptService service, ILogger<ReceiptController> logger, IDocumentPrintService print)
+
     {
+
         _service = service;
+
+        _print = print;
+
         _logger = logger;
+
     }
 
     // GET: api/v1/Receipt/GetAll
@@ -118,4 +126,17 @@ public class ReceiptController : ApiControllerBase
             await _service.CancelAsync(id, CurrentUser);
             return Ok(Done("Receipt cancelled successfully"));
         }, _logger, "Error cancelling Receipt");
+
+    [HttpGet("{id:int}/pdf")]
+
+    [Produces("application/pdf")]
+    public async Task<IActionResult> GetPdf(int id)
+
+    {
+
+        var bytes = await _print.GetReceiptPdfAsync(id);
+
+        return bytes == null ? NotFound() : File(bytes, "application/pdf", $"Receipt-{id}.pdf");
+
+    }
 }
