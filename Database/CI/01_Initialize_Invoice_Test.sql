@@ -403,77 +403,58 @@ GO
 
 
 CREATE OR ALTER PROCEDURE dbo.sp_Customer_GetPaged
-    @CustomerCode VARCHAR(20) = NULL,
-    @CustomerName VARCHAR(100) = NULL,
-    @MobileNo NVARCHAR(20) = NULL,
-    @City NVARCHAR(100) = NULL,
-    @PageNumber INT = 1,
-    @PageSize INT = 10
-AS
+(
+@CustomerCode VARCHAR(20) = NULL,
+@CustomerName VARCHAR(20) =NULL,
+@MobileNo NVARCHAR(20) = NULL,
+@City NVARCHAR(100) = NULL,
+@IsActive BIT = NULL,
+@PageNumber INT =1,
+@Pagesize INT =10
+)
+
+AS 
 BEGIN
-    SET NOCOUNT ON;
 
-    IF (@PageNumber <= 0)
-        SET @PageNumber = 1;
+	SET NOCOUNT ON;
 
-    IF (@PageSize <= 0)
-        SET @PageSize = 10;
+	IF (@PageNumber <=0) SET @PageNumber =1;
+	IF (@pageSize <=0) SET @pageSize =10;
 
-    DECLARE @Offset INT =
-        (@PageNumber - 1) * @PageSize;
+	DECLARE @offset INT = ( @pageNumber -1) * @PageSize;
 
-    SELECT
-        Id,
-        CustomerCode,
-        CustomerName,
-        ContactPerson,
-        MobileNo,
-        Email,
-        Address1,
-        Address2,
-        City,
-        State,
-        Country,
-        ZipCode,
-        GstNo,
-        IsActive,
-        IsDeleted,
-        CreatedBy,
-        CreatedDate,
-        UpdatedBy,
-        UpdatedDate,
-        COUNT(*) OVER() AS TotalRecords
-    FROM dbo.Customer
-    WHERE
-        (@CustomerCode IS NULL
-            OR CustomerCode LIKE '%' + @CustomerCode + '%')
-        AND
-        (@CustomerName IS NULL
-            OR CustomerName LIKE '%' + @CustomerName + '%')
-        AND
-        (@MobileNo IS NULL
-            OR MobileNo LIKE '%' + @MobileNo + '%')
-        AND
-        (@City IS NULL
-            OR City LIKE '%' + @City + '%')
-    ORDER BY Id ASC
-    OFFSET @Offset ROWS
-    FETCH NEXT @PageSize ROWS ONLY;
+    SELECT Id,CustomerCode,CustomerName,ContactPerson,MobileNo,Email,Address1,Address2,City,State,Country,ZipCode,GstNo,
+    IsActive,IsDeleted,CreatedBy,CreatedDate,UpdatedBy,UpdatedDate,
 
-    SELECT COUNT(1) AS TotalRecords
-    FROM dbo.Customer
-    WHERE
-        (@CustomerCode IS NULL
-            OR CustomerCode LIKE '%' + @CustomerCode + '%')
-        AND
-        (@CustomerName IS NULL
-            OR CustomerName LIKE '%' + @CustomerName + '%')
-        AND
-        (@MobileNo IS NULL
-            OR MobileNo LIKE '%' + @MobileNo + '%')
-        AND
-        (@City IS NULL
-            OR City LIKE '%' + @City + '%');
+COUNT(*) OVER() AS TotalRecords
+
+FROM Customer
+
+WHERE
+(@CustomerCode IS NULL OR CustomerCode LIKE '%' + @CustomerCode + '%')AND
+(@CustomerName IS NULL OR CustomerName LIKE '%' + @CustomerName + '%')AND
+(@MobileNo IS NULL OR MobileNo LIKE '%' + @MobileNo + '%') AND
+(@City IS NULL OR City LIKE '%' + @City + '%') AND
+(@IsActive IS NULL OR IsActive=@IsActive)
+
+ORDER BY Id ASC
+OFFSET @offset ROWS
+
+FETCH NEXT @PageSize ROWS ONLY;
+
+SELECT
+
+COUNT (1) AS TotalRecords
+
+FROM Customer
+
+WHERE
+(@CustomerCode IS NULL OR CustomerCode LIKE '%' + @CustomerCode + '%')AND
+(@CustomerName IS NULL OR CustomerName LIKE '%' + @CustomerName + '%')AND
+(@MobileNo IS NULL OR MobileNo LIKE '%' + @MobileNo + '%') AND
+(@City IS NULL OR City LIKE '%' + @City + '%') AND
+(@IsActive IS NULL OR IsActive=@IsActive)
+
 END
 GO
 
@@ -1556,77 +1537,58 @@ GO
 
 
 CREATE OR ALTER PROCEDURE dbo.sp_Vendor_GetPaged
-    @VendorCode VARCHAR(20) = NULL,
-    @VendorName VARCHAR(100) = NULL,
-    @MobileNo NVARCHAR(20) = NULL,
-    @City NVARCHAR(100) = NULL,
-    @PageNumber INT = 1,
-    @PageSize INT = 10
-AS
+(
+@VendorCode VARCHAR(20) = NULL,
+@VendorName VARCHAR(20) =NULL,
+@MobileNo NVARCHAR(20) = NULL,
+@City NVARCHAR(100) = NULL,
+@IsActive BIT = NULL,
+@PageNumber INT =1,
+@PageSize INT =10
+)
+
+AS 
 BEGIN
-    SET NOCOUNT ON;
 
-    IF (@PageNumber <= 0)
-        SET @PageNumber = 1;
+	SET NOCOUNT ON;
 
-    IF (@PageSize <= 0)
-        SET @PageSize = 10;
+	IF (@PageNumber <=0) SET @PageNumber =1;
+	IF (@pageSize <=0) SET @pageSize =10;
 
-    DECLARE @Offset INT =
-        (@PageNumber - 1) * @PageSize;
+	DECLARE @offset INT = ( @pageNumber -1) * @PageSize;
 
-    SELECT
-        Id,
-        VendorCode,
-        VendorName,
-        ContactPerson,
-        MobileNo,
-        Email,
-        Address1,
-        Address2,
-        City,
-        State,
-        Country,
-        ZipCode,
-        GstNo,
-        IsActive,
-        IsDeleted,
-        CreatedBy,
-        CreatedDate,
-        UpdatedBy,
-        UpdatedDate
-    FROM dbo.Vendor
-    WHERE
-        (@VendorCode IS NULL
-            OR VendorCode LIKE '%' + @VendorCode + '%')
-        AND
-        (@VendorName IS NULL
-            OR VendorName LIKE '%' + @VendorName + '%')
-        AND
-        (@MobileNo IS NULL
-            OR MobileNo LIKE '%' + @MobileNo + '%')
-        AND
-        (@City IS NULL
-            OR City LIKE '%' + @City + '%')
-    ORDER BY Id ASC
-    OFFSET @Offset ROWS
-    FETCH NEXT @PageSize ROWS ONLY;
+    SELECT Id,VendorCode,VendorName,ContactPerson,MobileNo,Email,Address1,Address2,City,State,Country,ZipCode,GstNo,
+    IsActive,IsDeleted,CreatedBy,CreatedDate,UpdatedBy,UpdatedDate,
 
-    SELECT
-        COUNT(1) AS TotalRecords
-    FROM dbo.Vendor
-    WHERE
-        (@VendorCode IS NULL
-            OR VendorCode LIKE '%' + @VendorCode + '%')
-        AND
-        (@VendorName IS NULL
-            OR VendorName LIKE '%' + @VendorName + '%')
-        AND
-        (@MobileNo IS NULL
-            OR MobileNo LIKE '%' + @MobileNo + '%')
-        AND
-        (@City IS NULL
-            OR City LIKE '%' + @City + '%');
+COUNT(*) OVER() AS TotalRecords
+
+FROM Vendor
+
+WHERE
+(@VendorCode IS NULL OR VendorCode LIKE '%' + @VendorCode + '%')AND
+(@VendorName IS NULL OR VendorName LIKE '%' + @VendorName + '%')AND
+(@MobileNo IS NULL OR MobileNo LIKE '%' + @MobileNo + '%') AND
+(@City IS NULL OR City LIKE '%' + @City + '%') AND
+(@IsActive IS NULL OR IsActive=@IsActive)
+
+ORDER BY Id ASC
+OFFSET @offset ROWS
+
+FETCH NEXT @PageSize ROWS ONLY;
+
+SELECT
+
+COUNT (1) AS TotalRecords
+
+FROM Vendor
+
+WHERE
+(@VendorCode IS NULL OR VendorCode LIKE '%' + @VendorCode + '%')AND
+(@VendorName IS NULL OR VendorName LIKE '%' + @VendorName + '%')AND
+(@MobileNo IS NULL OR MobileNo LIKE '%' + @MobileNo + '%') AND
+(@City IS NULL OR City LIKE '%' + @City + '%') AND 
+(@IsActive IS NULL OR IsActive=@IsActive)
+
 END
 GO
 

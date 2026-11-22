@@ -557,6 +557,7 @@ public class CustomerControllerTests
                 "Customer",
                 "111",
                 "Chennai",
+                true,
                 1,
                 10))
             .ReturnsAsync(pagedResult);
@@ -567,6 +568,7 @@ public class CustomerControllerTests
             "Customer",
             "111",
             "Chennai",
+            true,
             1,
             10);
 
@@ -597,6 +599,7 @@ public class CustomerControllerTests
                 "Customer",
                 "111",
                 "Chennai",
+                true,
                 1,
                 10),
             Times.Once);
@@ -619,6 +622,7 @@ public class CustomerControllerTests
                 null,
                 null,
                 null,
+                null,
                 1,
                 10))
             .ReturnsAsync(pagedResult);
@@ -628,7 +632,7 @@ public class CustomerControllerTests
             null,
             null,
             null,
-            null);
+            null,null);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(response);
@@ -643,6 +647,7 @@ public class CustomerControllerTests
 
         _serviceMock.Verify(
             x => x.GetAllPagedAsync(
+                null,
                 null,
                 null,
                 null,
@@ -663,6 +668,7 @@ public class CustomerControllerTests
                 "Customer",
                 "111",
                 "Chennai",
+                true,
                 1,
                 10))
             .ThrowsAsync(new Exception("Paging failed"));
@@ -673,6 +679,7 @@ public class CustomerControllerTests
             "Customer",
             "111",
             "Chennai",
+            true,
             1,
             10);
 

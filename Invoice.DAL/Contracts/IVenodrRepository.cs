@@ -15,6 +15,7 @@ public interface IVenodrRepository
         string? VendorName,
         string? MobileNo,
         string? City,
+        bool? IsActive,
         int pageNumber,
         int pageSize);
     Task<int> GetVendorCountAsync(bool? activeOnly);

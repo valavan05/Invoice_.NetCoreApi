@@ -14,6 +14,7 @@ namespace Invoice.BAL.Contracts
             string? CustomerName,
             string? MobileNo,
             string? City,
+            bool? IsActive,
             int PageNumber,
             int PageSize
             );
