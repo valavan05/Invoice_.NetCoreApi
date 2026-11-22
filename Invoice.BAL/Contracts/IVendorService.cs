@@ -19,6 +19,7 @@ namespace Invoice.BAL.Contracts
             string? VendorName,
             string? MobileNo,
             string? City,
+            bool? IsActive,
             int pageNumber,
             int pageSize);
     }
